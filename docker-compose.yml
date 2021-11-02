@@ -1,0 +1,18 @@
+version: '3'
+services:
+  api-json:
+    image: clue/json-server
+    restart: always
+    volumes:
+    - "./server:/data"
+    ports:
+    - 4000:80
+  client:
+    image: client-dashboard-depoguna
+    build: ./client
+    ports: 
+      - 3000:3000
+    volumes:
+      - "./client:/app"
+    environment:
+      - CHOKIDAR_USEPOLLING=true

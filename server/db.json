@@ -1,0 +1,34 @@
+{
+  "customers": [
+    {
+      "name": "Kevin",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Ahmed"
+    },
+    {
+      "id": 4,
+      "name": "tes"
+    }
+  ],
+  "orders": [
+    {
+      "customer": "Kevin",
+      "items": [
+        {
+          "name": "Jeruk",
+          "price": 20000
+        }
+      ]
+    }
+  ],
+  "users": [{
+    "email": "admin@mail.com",
+    "password": "1234"
+  }]
+}
