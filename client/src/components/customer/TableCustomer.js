@@ -8,8 +8,8 @@ import moment from 'moment';
 
 function TableCustomer() {
   const baseUrl = 'http://localhost:4000';
+  const limit = 3
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(3);
   const [totalData, setTotalData] = useState(1);
   const [data, setData] = useState([]);
   const [currentData, setCurrentData] = useState('');
@@ -75,22 +75,28 @@ function TableCustomer() {
       query += `&name_like=${search}`;
     }
     axios.get(`${baseUrl}/customers?${query}`).then((res) => {
-      console.log('reees', res);
       setTotalData(res.headers['x-total-count']);
       setData(res.data);
-    });
+    }).catch((err) => {
+      console.log('error get customer', JSON.stringify(err))
+    })
   };
 
   useEffect(() => {
     getData();
+    //eslint-disable-next-line
   }, [page, search]);
 
   const deleteCustomer = (data) => {
+    setPage(1)
     axios.delete(`${baseUrl}/customers/${currentData.id}`).then((res) => {
+    setPage(1)
       getData();
       setVisibleDelete(false);
       setCurrentData('');
-    });
+    }).catch((err) => {
+      console.log('error delete customer', JSON.stringify(err))
+    })
   };
 
   return (
@@ -132,8 +138,8 @@ function TableCustomer() {
             setSearch(e.target.value)
           }}
           onClickHeader={() => setVisibleForm(true)}
-          searchPlaceholder="Cari Customer"
-          buttonTitle="Tambah Customer"
+          searchPlaceholder="Search Customer"
+          buttonTitle="Add Customer"
         />
       </Container>
     </>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Navbar } from '../components/base';
 import { Customer, Order } from '.';
-import { Switch,Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 
 function Dashboard() {
   const history = useHistory();
@@ -12,19 +12,18 @@ function Dashboard() {
     if (!user) {
       history.push('/login');
     }
+    //eslint-disable-next-line
   }, [user]);
   return (
     <div>
       <Navbar />
-      <div className="pt-5 min-vh-100">
-
-      <Switch>
-      <Redirect exact from="/" to="/order" />
-        <Route path='/order' component={Order} />
-        <Route path='/customer' component={Customer} />
-      </Switch>
+      <div className='pt-5 min-vh-100'>
+        <Switch>
+          <Redirect exact from='/' to='/order' />
+          <Route path='/order' component={Order} />
+          <Route path='/customer' component={Customer} />
+        </Switch>
       </div>
-
     </div>
   );
 }

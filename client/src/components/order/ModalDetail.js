@@ -92,8 +92,6 @@ function ModalCustomer(props) {
           data={data.items}
           hidePagination={true}
            />
-           
-           {JSON.stringify(data)}
     </Modal>
   );
 }

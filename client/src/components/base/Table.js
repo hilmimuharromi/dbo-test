@@ -89,6 +89,7 @@ function TableBase(props) {
           />
           {Array.from({ length: totalPage }).map((item, index) => (
             <Pagination.Item
+              key={index}
               active={index + 1 === page ? true : false}
               onClick={() => {
                 setPage(index + 1);

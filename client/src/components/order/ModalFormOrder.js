@@ -48,12 +48,13 @@ function ModalFormCustomer(props) {
       method: method,
       data: payload,
     }).then((res) => {
-      console.log('res update', res);
       setCustomersId('');
       setInvoice('');
       setStatus('')
       onFinish();
-    });
+    }).catch((err) => {
+      console.log('error save order', JSON.stringify(err))
+    })
   };
 
   const addProduct = () => {
@@ -62,6 +63,11 @@ function ModalFormCustomer(props) {
     setName('')
     setPrice('')
     setQuantity('')
+  }
+
+  const deleteProduct = (i) => {
+    const newItems = items.filter((item, index) => index !== i)
+    setItems(newItems)
   }
 
   return (
@@ -100,19 +106,21 @@ function ModalFormCustomer(props) {
         <p>List Products</p>
         <ListGroup>
           {
-            items.map((item) => (
-              <ListGroup.Item>{item.name} - Rp {item.price} /{item.unit} - quantity : {item.quantity} </ListGroup.Item>
+            items.map((item, index) => (
+              <ListGroup.Item>{item.name} - Rp {item.price} /{item.unit} - quantity : {item.quantity}  <Button variant="danger" onClick={() => deleteProduct(index)}>Delete</Button> </ListGroup.Item>
             ))
           }
         </ListGroup>
-        <div className="p-5 mx-5 d-flex flex-column gap-1 ">
+        <div className="p-5 mx-5 d-flex flex-column gap-1 align-items-center ">
         <input  placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
         <input placeholder="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)}/>
         <input placeholder="quantity" type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
         <input placeholder="unit"  value={unit} onChange={(e) => setUnit(e.target.value)}/>
-        <Button variant="secondary" onClick={addProduct}>Add Product</Button>
+        <Button variant="secondary" className="w-50" onClick={addProduct}>Add Product</Button>
         </div>
-        <Button type='submit'>Save Order</Button>
+        <div className="d-flex justify-content-center">
+        <Button type='submit' className="w-50">Save Order</Button>
+        </div>
       </Form>
     </Modal>
   );

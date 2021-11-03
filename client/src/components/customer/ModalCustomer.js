@@ -9,16 +9,16 @@ function ModalCustomer(props) {
   const [orders, setOrders] = useState([]);
 
   const getOrders = () => {
-    console.log('masuk');
-
     axios(`${baseUrl}/orders?customers=${data.id}`).then((res) => {
-      console.log('res orders', res);
       setOrders(res.data);
-    });
+    }).catch((err) => {
+      console.log('error get order', JSON.stringify(err))
+    })
   };
 
   useEffect(() => {
     getOrders();
+    //eslint-disable-next-line
   }, [data.id]);
 
   const columns = [

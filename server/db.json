@@ -116,24 +116,17 @@
       "created": "2021-11-02T23:51:37+07:00"
     },
     {
-      "customersId": "4",
-      "invoice": "4-res-invoice",
+      "customersId": "5",
+      "invoice": "inv-30-res",
       "items": [
         {
-          "name": "Lampu",
-          "price": "10000",
-          "quantity": "10",
-          "unit": "pcs"
-        },
-        {
-          "name": "Pipa 3/4",
-          "price": "16000",
-          "quantity": "12",
-          "unit": "11"
+          "name": "Cat",
+          "price": "20000",
+          "quantity": "7",
+          "unit": "kaleng 3kg"
         }
       ],
-      "status": "Pending",
-      "created": "2021-11-03T04:13:05.301Z",
+      "status": "paid",
       "id": 4
     }
   ],

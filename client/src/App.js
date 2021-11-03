@@ -5,12 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
+   
     <Router>
       <Switch>
         <Route exact path='/login' component={Login} />
         <Route  path='/' component={Dashboard} />
       </Switch>
     </Router>
+
   );
 }
 
