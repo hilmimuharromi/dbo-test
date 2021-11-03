@@ -1,11 +1,11 @@
 import React from 'react'
 import {useLocalStorage} from '../utils/useLocalstorage'
+import {TableCustomer} from '../components/customer'
 const Customer = () =>  {
-    const [name, setName] = useLocalStorage("name", "Bob");
+    // const [name, setName] = useLocalStorage("name", "Bob");
     return (
         <div>
-                Customer page name
-            <input placeholder="name" onChange={(e) => setName(e.target.value)} />
+            <TableCustomer />
         </div>
     )
 }

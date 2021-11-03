@@ -1,9 +1,9 @@
 import React from 'react'
-
+import TableOrder from '../components/order/TableOrder'
 const Order = () =>  {
     return (
         <div>
-            Order page
+           <TableOrder />
             
         </div>
     )

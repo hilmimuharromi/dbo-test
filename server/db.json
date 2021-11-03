@@ -1,34 +1,146 @@
 {
   "customers": [
     {
-      "name": "Kevin",
-      "id": 1
+      "email": "ahmed1@mail.com",
+      "name": "Ahmed 1",
+      "address": "Jalan Kapuk, Jakarta Barat",
+      "id": 1,
+      "created": "2021-11-01T23:51:37+07:00"
     },
     {
-      "id": 2
+      "email": "tes@mail.com",
+      "name": "tes nama",
+      "id": 2,
+      "address": "Jalan Manggis, Jakarta Barat",
+      "created": "2021-11-02T23:51:37+07:00"
     },
     {
+      "email": "joko@mail.com",
+      "name": "Joko",
       "id": 3,
-      "name": "Ahmed"
+      "address": "Jalan pepaya, Jakarta Selatan",
+      "created": "2021-11-02T23:51:37+07:00"
     },
     {
+      "email": "doni@mail.com",
+      "name": "Doni",
       "id": 4,
-      "name": "tes"
+      "address": "Jalan Antasari, Jakarta Selatan",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "email": "tia@mail.com",
+      "name": "Tia",
+      "id": 5,
+      "address": "Jalan Medan Merdeka, Jakarta Pusat",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "id": 6,
+      "name": "Tita",
+      "email": "tita@mail.com",
+      "address": "Jalan Tugu Pahlawan, Jakarta Pusat",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "id": 7,
+      "name": "Tuti",
+      "email": "tuti@mail.com",
+      "address": "Jalan Singkong, Jakarta Selatan",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "email": "aa@mail.com",
+      "name": "si aa",
+      "id": 8,
+      "address": "Jalan rorotan, Jakarta Utara",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "email": "saya@mail.com",
+      "name": "saya",
+      "address": "Jalan Pengarengan",
+      "id": 9
+    },
+    {
+      "email": "contoh@mail.com",
+      "name": "contoh",
+      "address": "Jalan Contoh",
+      "id": 10
     }
   ],
   "orders": [
     {
-      "customer": "Kevin",
+      "id": 1,
+      "invoice": "1-110221-1040",
+      "customersId": 1,
       "items": [
         {
-          "name": "Jeruk",
-          "price": 20000
+          "name": "Pipa 1/2 inch",
+          "price": 20000,
+          "quantity": 10,
+          "unit": "Batang"
         }
-      ]
+      ],
+      "status": "paid",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "id": 2,
+      "customersId": 2,
+      "invoice": "2-110221-1040",
+      "items": [
+        {
+          "name": "Pipa 1/2 inch",
+          "price": 40000,
+          "quantity": 20,
+          "unit": "Batang"
+        }
+      ],
+      "status": "paid",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "customersId": 3,
+      "id": 3,
+      "invoice": "3-110221-1045",
+      "items": [
+        {
+          "name": "Pipa 3/2 inch",
+          "price": 20000,
+          "quantity": 20,
+          "unit": "Batang"
+        }
+      ],
+      "status": "paid",
+      "created": "2021-11-02T23:51:37+07:00"
+    },
+    {
+      "customersId": "4",
+      "invoice": "4-res-invoice",
+      "items": [
+        {
+          "name": "Lampu",
+          "price": "10000",
+          "quantity": "10",
+          "unit": "pcs"
+        },
+        {
+          "name": "Pipa 3/4",
+          "price": "16000",
+          "quantity": "12",
+          "unit": "11"
+        }
+      ],
+      "status": "Pending",
+      "created": "2021-11-03T04:13:05.301Z",
+      "id": 4
     }
   ],
-  "users": [{
-    "email": "admin@mail.com",
-    "password": "1234"
-  }]
+  "users": [
+    {
+      "email": "admin@mail.com",
+      "password": "1234"
+    }
+  ]
 }
